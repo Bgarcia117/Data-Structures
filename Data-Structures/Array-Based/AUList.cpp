@@ -1,5 +1,5 @@
 #include "../include/AUList.h"
 
-int AUList::GetLength() {
+int AUList::PutItem(int value) {
 
 }
