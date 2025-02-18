@@ -17,4 +17,5 @@ public:
 
 	// Transformers
 	void PutItem(int);
+	void DeleteItem(int);
 };
