@@ -23,10 +23,7 @@ public:
 	void MakeEmpty() { length = 0; } // Empties the array
 
 	// Iterators
-	int GetNextItem() { // Returns the next element based on the current position variable
-		currentPos++;
-		return items[currentPos];
-	}
+	int GetNextItem(); // Returns the next element based on the current position variable
 
 	void ResetList() { currentPos = -1; } // Resets index of the current position variable
 	int GetItem(int value); // Returns the index of an element

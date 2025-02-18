@@ -30,6 +30,19 @@ void AUList::DeleteItem(int value) {
 	}
 }
 
+int AUList::GetNextItem() {
+	if (length != 0 && currentPos != length - 1) {
+		currentPos++;
+		return items[currentPos];
+	}
+	else {
+		std::cout << "Error: Not enough values stored in array." << std::endl;
+		return -1;
+	}
+
+	
+}
+
 int AUList::GetItem(int value) {
 	for (int i = 0; i < length; i++) { // Searches for the item
 		if (items[i] == value) {
