@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/AUList.h"
+#include "../../include/AUList.h"
 
 void AUList::PutItem(int value) {
 	if (length < 50) {

@@ -103,6 +103,10 @@ int main() {
 
 	std::cout << "Second Object: " << std::endl;
 	std::cout << "The index of that added item: " << second.GetItem(100) << std::endl;
+
+
+	std::cout << "\n\n\n----------------------------------------------------------------------------" << std::endl;
+	std::cout << "Array Based Stack" << std::endl;
 	
 
 
