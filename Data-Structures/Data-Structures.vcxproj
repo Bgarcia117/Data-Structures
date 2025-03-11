@@ -127,11 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Array-Based\AUList.cpp" />
+    <ClCompile Include="src\Array-Based\ArrayStack.cpp" />
+    <ClCompile Include="src\Array-Based\AUList.cpp" />
+    <ClCompile Include="src\LinkedList-Based\LinkedListStack.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Others\BinarySearchTree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\ArrayStack.h" />
     <ClInclude Include="include\AUList.h" />
+    <ClInclude Include="include\BinarySearchTree.h" />
+    <ClInclude Include="include\LinkedListStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,7 @@
 #include "../../include/ArrayStack.h"
 
 void ArrayStack::push(int item) {
-	if (isFull) {
+	if (isFull()) {
 		std::cout << "The stack if full!" << std::endl;	
 	}
 	else {
