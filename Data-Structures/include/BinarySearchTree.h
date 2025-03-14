@@ -7,21 +7,22 @@ struct Node {
 	int item;
 	Node* left; // Left Child
 	Node* right; // Right Child
+
+	Node(int _item) : item(_item), left(nullptr), right(nullptr) {}
 };
 
 class BinarySearchTree {
 private:
 	Node* root; // Entry point node for the tree
-	Node* curPos; // Tracks the position in the tree during traversal
 
-	void Insert(Node* &node, int newItem);
-	int FindItem(Node* node, int _item);
+	Node* InsertHelper(Node* root, int newItem);
+	bool Search(Node* node, int _item);
 	void Delete(Node* &node, int _item);
 	void DeleteNode(Node*& node);
 public:
-	BinarySearchTree();
+	BinarySearchTree() : root(nullptr) {}
 
-	int GetItem(int _item);
-	void PutItem(int newItem);
+	void Insert(int newItem) { root = InsertHelper(root, newItem); }
+	int GetItem(int item);
 	void DeleteItem(int _item);
 };
