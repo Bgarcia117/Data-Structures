@@ -1,15 +1,14 @@
 #include "../../include/BinarySearchTree.h"
 
-// Traverses through the tree until it finds its NULL spot
+// Inserts node by finding its place in the Tree
 Node* BinarySearchTree::InsertHelper(Node* root, int newItem) {
 	// Base case: Empty tree
-	if (node == NULL) {
-		return new Node(newItem);
-	}
+	if (node == NULL) return new Node(newItem);
 
 	// Compares value with node to decide which side to be inserted
 	// Then recursively calls until base case is reached
-	else if (newItem < node->item) {
+	// Return value is stored in node->left or node->right until recursive calls finish
+	if (newItem < node->item) {
 		node->left = InsertHelper(node->left, newItem);
 	}
 
