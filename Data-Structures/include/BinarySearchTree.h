@@ -16,13 +16,15 @@ private:
 	Node* root; // Entry point node for the tree
 
 	Node* InsertHelper(Node* root, int newItem);
-	bool Search(Node* node, int _item);
-	void Delete(Node* &node, int _item);
-	void DeleteNode(Node*& node);
+	bool SearchHelper(Node* node, int _item);
+	void DeleteHelper(Node* node, int _item);
+	int CountNodesHelper(Node* node);
+	
 public:
 	BinarySearchTree() : root(nullptr) {}
 
 	void Insert(int newItem) { root = InsertHelper(root, newItem); }
-	int GetItem(int item);
-	void DeleteItem(int _item);
+	bool Search(int item) { return SearchHelper(root, item); }
+	void DeleteNode(int _item);
+	int CountNodes() { return CountNodesHelper(root); }
 };
