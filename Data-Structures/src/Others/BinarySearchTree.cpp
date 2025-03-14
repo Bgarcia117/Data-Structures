@@ -20,13 +20,16 @@ Node* BinarySearchTree::InsertHelper(Node* node, int newItem) {
 	return root;
 }
 
+// Searches for a node. The path will be at most height + 1 (accounts for root node)
 bool BinarySearchTree::SearchHelper(Node* node, int item) {
 	if (node == nullptr) return false;
 
 	if (item == node->item) return node->item; 
 
 	// Compares values to pick an edge to follow (edge connects nodes)
+	
 	if (item < node->item) {
+		// The new recursive call returns its value to the previous call
 		return SearchHelper(node->left, item);
 	}
 	else {
