@@ -21,19 +21,24 @@ Node* BinarySearchTree::InsertHelper(Node* root, int newItem) {
 	return root;
 }
 
-// Traverses tree until the value is found or NULL is reached
-int BinarySearchTree::FindItem(Node* node, int item) {
-	if (node == NULL) {
-		return -1; // Use a dummy value not -1
-	}
-	else if (item == node->item) {
-		return node->item; // Returns value if found
-	}
-	// Compares values to pick and edge to follow (edge connects nodes)
-	else if (item < node->item) {
-		return FindItem(node->left, item);
+bool BinarySearchTree::SearchHelper(Node* node, int item) {
+	if (node == nullptr) return false;
+
+	if (item == node->item) return node->item; 
+
+	// Compares values to pick an edge to follow (edge connects nodes)
+	if (item < node->item) {
+		return SearchHelper(node->left, item);
 	}
 	else {
-		return FindItem(node->right, item);
+		return SearchHelper(node->right, item);
 	}
+} // Note: Professor perfers to return the value itself
+
+int BinarySearchTree::CountNodesHelper(Node* node) {
+	if (node == nullptr) return 0; // Base Case: Empty Tree
+
+	// Adds 1 for the current node
+	// If there is no child, it returns and adds 0
+	return CountNodesHelper(node->left) + CountNodesHelper(node->right) + 1;
 }
