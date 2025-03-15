@@ -23,8 +23,8 @@ private:
 public:
 	BinarySearchTree() : root(nullptr) {}
 
-	void Insert(int newItem) { root = InsertHelper(root, newItem); }
-	bool Search(int item) { return SearchHelper(root, item); }
+	void InsertNode(int newItem) { root = InsertHelper(root, newItem); }
+	bool SearchNode(int item) { return SearchHelper(root, item); }
 	void DeleteNode(int _item);
 	int CountNodes() { return CountNodesHelper(root); }
 };
