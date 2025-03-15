@@ -44,3 +44,23 @@ int BinarySearchTree::CountNodesHelper(Node* node) {
 	// If there is no child, it returns and adds 0
 	return CountNodesHelper(node->left) + CountNodesHelper(node->right) + 1;
 }
+
+Node* BinarySearchTree::DeleteHelper(Node* node, int _item) {
+	if (node == nullptr) return nullptr; // Base Case: Empty Tree
+
+	// Traverses to next node after comparing
+	if (_item < node->item) {
+		node->left = DeleteHelper(node->left, _item);
+	}
+	else if (_item > node->item) {
+		node->right = DeleteHelper(node->right, _item);
+	}
+	else {
+		// Base Case: Node with no children
+		if (node->left == nullptr && node->right == nullptr) {
+			delete node; // Deallocates memory for node obj allocated by "new"
+			return nullptr;
+
+		} else if ()
+	}
+}
