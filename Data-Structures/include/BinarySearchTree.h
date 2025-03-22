@@ -19,6 +19,7 @@ private:
 	bool SearchHelper(Node* node, int _item);
 	void DeleteHelper(Node* node, int _item);
 	int CountNodesHelper(Node* node);
+	Node* FindMinValue(Node* node);
 	
 public:
 	BinarySearchTree() : root(nullptr) {}
