@@ -45,10 +45,25 @@ int BinarySearchTree::CountNodesHelper(Node* node) {
 	return CountNodesHelper(node->left) + CountNodesHelper(node->right) + 1;
 }
 
+// Finds the minimum value in a subtree by reaching the leftmost node
+// Can be used on left or right subtrees
+Node* BinarySearchTree::FindMinValue(Node* node) {
+
+	// The current node is checked each time as an extra saftey check
+	// Equivalent to checking current node before the loop
+	// != is omitted in the loop becuase it is implied
+	while (node && node->left) {
+		node = node->left;
+	}
+
+	// Returns pointer to the node (b/c of function return type)
+	return node;
+}
+
 Node* BinarySearchTree::DeleteHelper(Node* node, int _item) {
 	if (node == nullptr) return nullptr; // Base Case: Empty Tree
 
-	// Traverses to next node after comparing
+	// Continues to next node after comparing
 	if (_item < node->item) {
 		node->left = DeleteHelper(node->left, _item);
 	}
@@ -58,9 +73,47 @@ Node* BinarySearchTree::DeleteHelper(Node* node, int _item) {
 	else {
 		// Base Case: Node with no children
 		if (node->left == nullptr && node->right == nullptr) {
-			delete node; // Deallocates memory for node obj allocated by "new"
+			// Deallocates memory for node obj allocated by "new"
+			delete node;
+
+			// Pointer is set to nullptr and is stored in root, left, or right
+			// If not stored in root, last line of function returns root
 			return nullptr;
 
-		} else if ()
+		}
+		// Case 2: One child
+		// Child on the right side
+		// Previous if statement checked if both children == nullptr, so one child != nullptr
+		else if (node->left == nullptr) {
+			// Stores right child before parent is deleted
+			Node* temp = node->right;
+
+			// Deallocates parent node from heap
+			delete node;
+
+			// Returns child node to previous node
+			return temp;
+		}
+		// Child on the left side
+		else if (node->right == nullptr) {
+			Node* temp = node->left;
+			delete node;
+			return temp;
+		}
+		// Case 3: Node with two children
+		else {
+			// Finds successor (smallest in the right subtree)
+			Node* successor = FindMinValue(node->right);
+
+			// Replaces the value of current node with value of successor
+			node->data = successor->item;
+
+			// Finds and deletes orignal successor node
+			node->right = DeleteHelper(node->right, successor->item);
+		}
 	}
+
+	// Returns nullptr if the only (root) node is deleted 
+	// Otherwise it returns unchanged root
+	return node;
 }
