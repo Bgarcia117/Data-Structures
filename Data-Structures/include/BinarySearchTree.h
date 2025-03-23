@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 // Binary Search Tree
 // The root node should be greater than the left child but less than the right
 // The left most child should be the min value and rightmost should hold the max
@@ -17,15 +18,17 @@ private:
 
 	Node* InsertHelper(Node* root, int newItem);
 	bool SearchHelper(Node* node, int _item);
-	void DeleteHelper(Node* node, int _item);
+	Node* DeleteHelper(Node* node, int _item);
 	int CountNodesHelper(Node* node);
 	Node* FindMinValue(Node* node);
+	void PrintInOrder(Node* node);
 	
 public:
 	BinarySearchTree() : root(nullptr) {}
 
 	void InsertNode(int newItem) { root = InsertHelper(root, newItem); }
 	bool SearchNode(int item) { return SearchHelper(root, item); }
-	void DeleteNode(int _item);
+	void DeleteNode(int _item) { root = DeleteHelper(root, _item); }
 	int CountNodes() { return CountNodesHelper(root); }
+	void PrintBST() { PrintInOrder(root); std::cout << std::endl; }
 };

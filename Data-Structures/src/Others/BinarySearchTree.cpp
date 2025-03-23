@@ -106,7 +106,7 @@ Node* BinarySearchTree::DeleteHelper(Node* node, int _item) {
 			Node* successor = FindMinValue(node->right);
 
 			// Replaces the value of current node with value of successor
-			node->data = successor->item;
+			node->item = successor->item;
 
 			// Finds and deletes orignal successor node
 			node->right = DeleteHelper(node->right, successor->item);
@@ -116,4 +116,20 @@ Node* BinarySearchTree::DeleteHelper(Node* node, int _item) {
 	// Returns nullptr if the only (root) node is deleted 
 	// Otherwise it returns unchanged root
 	return node;
+}
+
+// Prints nodes using In Order Traversal
+void BinarySearchTree::PrintInOrder(Node* node) {
+	// Base Case: nullptr/empty tree
+	// Unwinds the call stack
+	if (node == nullptr) return; 
+
+	// Travereses to the left most node
+	PrintInOrder(node->left);
+
+	// Runs once the left most node is reached
+	std::cout << node->item << " ";
+
+	// Traveres to right child
+	PrintInOrder(node->right);
 }
