@@ -133,3 +133,31 @@ void BinarySearchTree::PrintInOrder(Node* node) {
 	// Traveres to right child
 	PrintInOrder(node->right);
 }
+
+void BinarySearchTree::DeleteTree(Node* node) {
+	if (node == nullptr) return;
+
+	// Recursive calls to delete left, right, then root nodes
+	DeleteTree(node->left);
+	DeleteTree(node->right);
+
+	// Deallocates node memory
+	delete node;
+}
+
+Node* BinarySearchTree::DeepCopy(Node* original) {
+	if (original == nullptr) return nullptr;
+
+	// Creates a copy of the original parent node for the new tree
+	Node* newNode = new Node(original->item);
+
+	// Reucursive calls for left and right subtrees
+	// Stores new nodes as children of parent nodes
+	newNode->left = DeepCopy(original->left);
+	newNode->right = DeepCopy(original->right);
+
+	// Returns the new parent node with children
+	return newNode;
+
+
+}

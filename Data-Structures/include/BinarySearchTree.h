@@ -22,9 +22,14 @@ private:
 	int CountNodesHelper(Node* node);
 	Node* FindMinValue(Node* node);
 	void PrintInOrder(Node* node);
+	void DeleteTree(Node* node);
+	Node* DeepCopy(Node* original);
 	
 public:
 	BinarySearchTree() : root(nullptr) {}
+	BinarySearchTree(const BinarySearchTree& otherBST) { root = DeepCopy(otherBST.root); }
+
+	~BinarySearchTree() { DeleteTree(root); }
 
 	void InsertNode(int newItem) { root = InsertHelper(root, newItem); }
 	bool SearchNode(int item) { return SearchHelper(root, item); }
