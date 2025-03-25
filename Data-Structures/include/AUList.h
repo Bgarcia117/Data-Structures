@@ -30,4 +30,5 @@ public:
 	void ResetList() { currentPos = -1; } // Resets index of the current position variable
 	int GetItem(int value); // Returns the index of an element
 
+	void AUListDemonstration(); // Creates AUList instances and displays functions
 };
