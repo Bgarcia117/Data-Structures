@@ -1,8 +1,8 @@
 
 #include "../../include/ArrayStack.h"
 
-void ArrayStack::push(int item) {
-	if (isFull()) {
+void ArrayStack::Push(int item) {
+	if (IsFull()) {
 		std::cout << "The stack if full!" << std::endl;	
 	}
 	else {
@@ -10,8 +10,8 @@ void ArrayStack::push(int item) {
 	}
 }
 
-int ArrayStack::pop() {
-	if (isEmpty()) {
+int ArrayStack::Pop() {
+	if (IsEmpty()) {
 		std::cout << "The stack is empty!" << std::endl;
 		return -1;
 	}
@@ -20,8 +20,8 @@ int ArrayStack::pop() {
 	}
 }
 
-int ArrayStack::peek() {
-	if (isEmpty()) {
+int ArrayStack::Peek() {
+	if (IsEmpty()) {
 		std::cout << "The stack is empty!" << std::endl;
 		return -1;
 	}

@@ -30,6 +30,9 @@
     <ClCompile Include="src\Others\BinarySearchTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\LinkedList-Based\CLinkedQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AUList.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\BinarySearchTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CLinkedQueueHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

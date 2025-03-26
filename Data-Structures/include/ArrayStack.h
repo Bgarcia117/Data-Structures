@@ -9,9 +9,9 @@ private:
 public:
 	ArrayStack() : top(-1) {}
 
-	void push(int item);
-	int pop();
-	int peek();
-	bool isEmpty() { return top < 0; }
-	bool isFull() { return top == MAX_SIZE - 1; }
+	void Push(int item);
+	int Pop();
+	int Peek();
+	bool IsEmpty() { return top < 0; }
+	bool IsFull() { return top == MAX_SIZE - 1; }
 };
