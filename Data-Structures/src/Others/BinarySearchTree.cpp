@@ -161,3 +161,64 @@ Node* BinarySearchTree::DeepCopy(Node* original) {
 
 
 }
+
+void BinarySearchTree::TraverseAndEnqueue(TraversalOrder order) {
+	switch (order) {
+	    case PRE_ORDER:
+			PreOrderEnqueue(root);
+			break;
+
+		case IN_ORDER:
+			InOrderEnqueue(root);
+			break;
+
+		case POST_ORDER:
+			PostOrderEnqueue(root);
+			break;
+
+	}
+}
+
+// Pre-Order Traversal
+void BinarySearchTree::PreOrderEnqueue(Node* node) {
+	if (node == nullptr) return; // Base Case: Null node
+
+	// Process parent node first
+	LinkedQueue.Enqueue(node->item);
+
+	// Traverse left subtree
+	PreOrderEnqueue(node->left);
+
+	// Traverse right subtree
+	PreOrderEnqueue(node->right);
+}
+
+// In-Order Traversal: Processes left subtree, then right subtree, then root
+void BinarySearchTree::InOrderEnqueue(Node* node) {
+	if (root == nullptr) return;
+
+	InOrderEnqueue(node->left);
+
+	LinkedQueue.Enqueue(node->item);
+
+	InOrderEnqueue(node->right);
+}
+
+// Post-Order Traversal: Process left subtree, then right subtree, then root
+void BinarySearchTree::PostOrderEnqueue(Node* node) {
+	if (root == nullptr) return;
+
+	PostOrderEnqueue(node->left);
+
+	PostOrderEnqueue(node->right);
+
+	LinkedQueue.Enqueue(node->item);
+}
+
+void BinarySearchTree::BSTDemonstration() {
+	BinarySearchTree tree;
+
+	tree.InsertNode(15);
+	tree.InsertNode(12);
+	tree.PrintBST;
+}
