@@ -47,7 +47,7 @@
     <ClInclude Include="include\BinarySearchTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\CLinkedQueueHeader.h">
+    <ClInclude Include="include\CLinkedQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

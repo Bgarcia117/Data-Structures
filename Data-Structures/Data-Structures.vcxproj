@@ -138,7 +138,7 @@
     <ClInclude Include="include\ArrayStack.h" />
     <ClInclude Include="include\AUList.h" />
     <ClInclude Include="include\BinarySearchTree.h" />
-    <ClInclude Include="include\CLinkedQueueHeader.h" />
+    <ClInclude Include="include\CLinkedQueue.h" />
     <ClInclude Include="include\LinkedListStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
