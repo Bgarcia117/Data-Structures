@@ -1,4 +1,4 @@
-#include "../../include/BinarySearchTree.h"
+#include "../../include/BinarySearchTree.h""
 
 // Inserts node by finding its place in the Tree
 Node* BinarySearchTree::InsertHelper(Node* node, int newItem) {
@@ -17,7 +17,7 @@ Node* BinarySearchTree::InsertHelper(Node* node, int newItem) {
 	}
 	
 	// Returns the unmodified pointer to root node
-	return root;
+	return node;
 }
 
 // Searches for a node. The path will be at most height + 1 (accounts for root node)
@@ -216,9 +216,11 @@ void BinarySearchTree::PostOrderEnqueue(Node* node) {
 }
 
 void BinarySearchTree::BSTDemonstration() {
-	BinarySearchTree tree;
 
-	tree.InsertNode(15);
-	tree.InsertNode(12);
-	tree.PrintBST;
+	InsertNode(15);
+	InsertNode(5);
+	InsertNode(17);
+	InsertNode(2);
+	PrintBST();
+
 }

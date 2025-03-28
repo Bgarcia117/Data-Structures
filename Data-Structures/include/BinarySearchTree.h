@@ -33,7 +33,7 @@ private:
 	void PostOrderEnqueue(Node* node);
 
 	// Transformer Funciton Helpers
-	Node* InsertHelper(Node* root, int newItem);
+	Node* InsertHelper(Node* node, int newItem);
 	Node* DeleteHelper(Node* node, int _item);
 	void DeleteTree(Node* node);
 
