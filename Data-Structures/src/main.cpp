@@ -1,6 +1,7 @@
 // Array Based Unsorted List
 #include <iostream>
 #include "../include/AUList.h"
+#include "../include/BinarySearchTree.h"
 
 int main() {
 	int userChoice;
@@ -23,12 +24,26 @@ int main() {
 	}
 	
 	switch (userChoice) {
-	    case 1:
-			AUList list(25); 
+	    case 1: 
+		{ // Scope block used limit lifetime of the tree obj
+			AUList list(25);
 			list.AUListDemonstration();
+		}
+		break;
+			
+		case 2:
+			break;
+
+		case 3:
+			break;
+
 		case 4:
-
-
+		{
+			BinarySearchTree tree;
+			tree.BSTDemonstration();
+		}
+		break;
+	
 	}
 
 	return 0;
