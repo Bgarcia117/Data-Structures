@@ -36,8 +36,12 @@ private:
 	Node* InsertHelper(Node* node, int newItem);
 	Node* DeleteHelper(Node* node, int _item);
 	void DeleteTree(Node* node);
+
+	// Balancing Functions
 	Node* RightRotation(Node* node);
 	Node* LeftRotation(Node* node);
+	Node* LeftRightRotation(Node* node);
+	Node* RightLeftRotation(Node* node);
 
 	// Observer Funciton Helpers
 	Node* FindMinValue(Node* node);

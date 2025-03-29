@@ -259,3 +259,19 @@ Node* BinarySearchTree::LeftRotation(Node* root) {
 	// Updates the root
 	return newRoot;
 }
+
+Node* BinarySearchTree::LeftRightRotation(Node* root) {
+	// Performs a left rotation on left subtree to have it "stick out"
+	root->left = LeftRotation(root->left);
+
+	// Finishes balancing by rotating by using root as pivot
+	return RightRotation(root);
+}
+
+Node* BinarySearchTree::RightLeftRotation(Node* root) {
+	// Performs right rotation on right subtree to make it "stick out"
+	root->right = RightRotation(root->right);
+
+	// Finishes balancing by rotating by using root as pivot
+	return LeftRotation(root);
+}
