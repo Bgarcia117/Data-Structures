@@ -224,3 +224,38 @@ void BinarySearchTree::BSTDemonstration() {
 	PrintBST();
 
 }
+
+Node* BinarySearchTree::RightRotation(Node* root) {
+	if (root == nullptr || root->left == nullptr) return root;
+
+	// Stores the left node and its subtree
+	Node* newRoot = root->left;
+
+	// Disconnects right child from new root and connects to current root
+	// The child replaces the entire left subtree in the ex root
+	// That left subree was stored in newRoot
+	root->left = newRoot->right;
+
+	// Connects new root to ex-root
+	newRoot->right = root;
+
+	// Updates the root
+	return newRoot;
+}
+
+Node* BinarySearchTree::LeftRotation(Node* root) {
+	if (root == nullptr || root->right == nullptr) return root;
+
+	// Stores right node and its subtrees
+	Node* newRoot = root->right;
+
+	// Replaces right subtree with newRoots left child
+	// This is so that newRoot->left can hold the ex-root and its subtrees
+	root->right = newRoot->left;
+
+	// Connects the trees
+	newRoot->left = root;
+
+	// Updates the root
+	return newRoot;
+}

@@ -36,6 +36,8 @@ private:
 	Node* InsertHelper(Node* node, int newItem);
 	Node* DeleteHelper(Node* node, int _item);
 	void DeleteTree(Node* node);
+	Node* RightRotation(Node* node);
+	Node* LeftRotation(Node* node);
 
 	// Observer Funciton Helpers
 	Node* FindMinValue(Node* node);
@@ -56,6 +58,8 @@ public:
 	void InsertNode(int newItem) { root = InsertHelper(root, newItem); }
 	bool SearchNode(int item) { return SearchHelper(root, item); }
 	void DeleteNode(int _item) { root = DeleteHelper(root, _item); }
+	void PerformRightRotation() { root = RightRotation(root); }
+	void PerformLeftRotation() { root = LeftRotation(root); }
 
 	void BSTDemonstration();
 };
