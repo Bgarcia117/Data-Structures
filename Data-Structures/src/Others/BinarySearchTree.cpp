@@ -275,3 +275,60 @@ Node* BinarySearchTree::RightLeftRotation(Node* root) {
 	// Finishes balancing by rotating by using root as pivot
 	return LeftRotation(root);
 }
+
+// Returns the height of a node
+// The height is the number of edges on the longest path
+int BinarySearchTree::GetHeight(Node* node) {
+	// Base Case: No node
+	if (node == nullptr) return 0;
+
+	int leftHeight = GetHeight(node->left);
+
+	int rightHeight = GetHeight(node->right);
+
+	// Remember: Max(nullptr, nullptr) + 1 = 1
+	return Max(leftHeight, rightHeight) + 1;
+
+   // Shorthand version:
+   // return Max(GetHeight(node->left),GetHeight(node->right)) + 1;
+}
+
+// Calculates the Balance Factor
+// Balance Factor: Left subtree - Right Subtree. To check balance
+int BinarySearchTree::GetBalanceFactor(Node* node) {
+	if (node == nullptr) return 0;
+
+	return GetHeight(node->left) - GetHeight(node->right);
+}
+
+Node* BinarySearchTree::Balance(Node* root) {
+	if (root == nullptr) return root;
+
+	int balance = GetBalanceFactor(root);
+
+	// Left Subtree Imbalance
+	if (balance > 1) {
+		// Left-Right Case: Left Subtree has right imbalance
+		if (GetBalanceFactor(root->left) < 0) {
+			return LeftRightRotation(root);
+		}
+		// Left-Left Case: Resolved with one right rotation
+		else {
+			RightRotation(root);
+		}
+	}
+
+	// Right Subtree Imbalance
+	if (balance < -1) {
+		// Right-Left Case: Right Subtree has left imbalance
+		if (GetBalanceFactor(root->right) > 0) {
+			return RightLeftRotation(root);
+		}
+		// Right-Right Case: Resolved with one right rotation
+		else {
+			return LeftRotation(root);
+		}
+	}
+	// Returns balanced tree
+	return root;
+}

@@ -31,6 +31,7 @@ private:
 	void PreOrderEnqueue(Node* node);
 	void InOrderEnqueue(Node* node);
 	void PostOrderEnqueue(Node* node);
+	int GetHeight(Node* node);
 
 	// Transformer Funciton Helpers
 	Node* InsertHelper(Node* node, int newItem);
@@ -42,6 +43,9 @@ private:
 	Node* LeftRotation(Node* node);
 	Node* LeftRightRotation(Node* node);
 	Node* RightLeftRotation(Node* node);
+	int GetBalanceFactor(Node* node);
+	Node* Balance(Node* node);
+	int Max(int a, int b) { return a > b ? a : b; }
 
 	// Observer Funciton Helpers
 	Node* FindMinValue(Node* node);
