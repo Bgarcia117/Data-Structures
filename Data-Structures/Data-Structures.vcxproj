@@ -140,6 +140,7 @@
     <ClInclude Include="include\BinarySearchTree.h" />
     <ClInclude Include="include\CLinkedQueue.h" />
     <ClInclude Include="include\LinkedListStack.h" />
+    <ClInclude Include="include\MinHeap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
