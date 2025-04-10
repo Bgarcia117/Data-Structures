@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="src\Array-Based\ArrayStack.cpp" />
     <ClCompile Include="src\Array-Based\AUList.cpp" />
+    <ClCompile Include="src\Heap-Based\MinHeap.cpp" />
     <ClCompile Include="src\LinkedList-Based\CLinkedQueue.cpp" />
     <ClCompile Include="src\LinkedList-Based\LinkedListStack.cpp" />
     <ClCompile Include="src\main.cpp" />

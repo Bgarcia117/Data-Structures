@@ -18,6 +18,7 @@ void MinHeap::Insert(int value) {
 		capacity *= 2;
 	}
 
+	// Stores the new value
 	elements[numOfElements] = value;
 	numOfElements++;
 
@@ -25,10 +26,10 @@ void MinHeap::Insert(int value) {
 	HeapifyUp(numOfElements - 1);
 }
 
-// Used for inserting new elements
+// Used for moving values "up" the heap
 void MinHeap::HeapifyUp(int index) {
-	// Checks if new element is at the root or in the right place
-	// New element needs to be greater than the parent
+	// Checks if it is the only items in the heap
+	// Stops the function once it is in the correct position
 	if (index == 0 || elements >= elements[Parent(index)]) {
 		return;
 	}
@@ -40,8 +41,9 @@ void MinHeap::HeapifyUp(int index) {
 	HeapifyUp(Parent(index));
 }
 
-// Used when root is removed (Dequeue)
-// or when the inserted
+// Used for moving values "down" the heap
+// Used for after deleting the root
+// Or for building heaps from unsorted arrays
 void MinHeap::HeapifyDown(int index) {
 	int min = index; // Root to be removed
 	int left = LeftChild(index);

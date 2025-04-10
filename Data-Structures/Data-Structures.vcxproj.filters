@@ -33,6 +33,9 @@
     <ClCompile Include="src\LinkedList-Based\CLinkedQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Heap-Based\MinHeap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AUList.h">
