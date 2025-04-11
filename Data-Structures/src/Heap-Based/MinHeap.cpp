@@ -45,20 +45,26 @@ void MinHeap::HeapifyUp(int index) {
 // Used for after deleting the root
 // Or for building heaps from unsorted arrays
 void MinHeap::HeapifyDown(int index) {
-	int min = index; // Root to be removed
-	int left = LeftChild(index);
-	int right = RightChild(index);
+	int minValue = index; // Index of current element
+	int leftChild = LeftChild(index);
+	int rightChild = RightChild(index);
 
 	// Checks if there is anything at the index for the left child
-	// Compares to the left child
-	if (left < numOfElements && elements[left] < elements[min]) {
-
+	// Compares to the left child to current node
+	if (left < numOfElements && elements[left] < elements[minValue]) {
+		minValue = leftChild;
 	}
 
+	// Repeats checks on left child on right child
+	if (right < numOfElements && elements[right] < elements[minValue]) {
+		minValue = rightChild;
+	}
 
-
-
-
+	// If original element was not the smallest, make another recursive call
+	if (minValue != index) {
+		swap(elements[minValue], elements[index]);
+		HeapifyDown(minValue);
+	}
 
 }
 
