@@ -1,4 +1,4 @@
-#include "../../include/BinarySearchTree.h""
+#include "../../include/BinarySearchTree.h"
 
 // Inserts node by finding its place in the Tree
 Node* BinarySearchTree::InsertHelper(Node* node, int newItem) {
