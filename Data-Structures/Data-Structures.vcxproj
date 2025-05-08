@@ -132,6 +132,7 @@
     <ClCompile Include="src\Heap-Based\MinHeap.cpp" />
     <ClCompile Include="src\LinkedList-Based\CLinkedQueue.cpp" />
     <ClCompile Include="src\LinkedList-Based\LinkedListStack.cpp" />
+    <ClCompile Include="src\LinkedList-Based\SinglyLinkedList.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Others\BinarySearchTree.cpp" />
   </ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="include\CLinkedQueue.h" />
     <ClInclude Include="include\LinkedListStack.h" />
     <ClInclude Include="include\MinHeap.h" />
+    <ClInclude Include="include\SinglyLinkedList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
