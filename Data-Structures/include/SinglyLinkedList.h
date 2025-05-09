@@ -17,7 +17,7 @@ public:
 
 	void insertAtHead(int val);
 	void insertAtTail(int val);
-	void deleteNode(int val);
-	vector<int> getValues();
+	bool deleteNode(int index);
+	std::vector<int> getValues();
 };
 
